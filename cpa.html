@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Layout</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+<style> .card:hover  {
+    transform: scale(0.9);
+    
+}
+
+
+body{background-color: rgb(237, 235, 232);}
+</style>
+
+<style>
+    .first-row {
+        overflow: hidden;
+    }
+
+    .hero-section {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url(https://static.dezeen.com/uploads/2016/11/bottega-venetas-maison-boutique-tomas-maier-fashion-boutique-pinterest-dezeen-social-2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .hero-section:hover {
+        transform: scale(1.05);
+        transition: 500ms ease-in-out;
+    }
+
+    .mask {
+        margin-top: 25vh;
+    }
+
+    .Hero-btn {
+        border: solid 2px white;
+        color: white;
+        padding: 1rem 2rem;
+        border: solid 3px white;
+    }
+
+    .Hero-btn:hover {
+        background-color: tan;
+        transition: 500ms ease-in-out;
+        color: white;
+        font-weight: 700;
+        border: none;
+    }
+
+    h2 {
+        color: tan;
+        font-weight: 600;
+        font-size: 2.8rem;
+        position: relative;
+        padding-top: 20px;
+    }
+
+    h2::after {
+        position: absolute;
+        content: '';
+        inset: 0;
+        width: 50px;
+        margin: auto;
+        border-top: solid 4px white;
+    }
+
+    /* text animation-----------start */
+    .typewriter {
+        width: fit-content;
+    }
+
+    .typewriter h2 {
+        overflow: hidden;
+        border-right: 0.15em solid white;
+        white-space: nowrap;
+        letter-spacing: 0.13em;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 100%
+        }
+    }
+
+    @keyframes blink-caret {
+        from,
+        to {
+            border-color: transparent
+        }
+
+        50% {
+            border-color: white;
+        }
+    }
+    /* text animation-----------end */
+
+    /* Responsive text size for smaller screens */
+    @media (max-width: 767px) {
+        h2 {
+            font-size: 0.5rem; /* Adjust the font size for smaller screens */
+        }
+    }
+</style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: rgb(225, 225, 225 , 0.4);">
+        <a class="navbar-brand" href="#" style="color: black; font-weight: bold;"> D.O.STORE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style=" border: 2px solid black; ">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="navbar-nav text-center " > <!-- Add text-center class -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"  style="color: black;" onclick="ga()">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;" onclick="scrollToPosition()">Store</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center "> <!-- Use mx-auto to center the links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#"  style="color: black;" data-bs-toggle="modal" data-bs-target="#myModal">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/lorcan.cm?igsh=MWJlNzBtYWpreDl1dQ==" style="color: black;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Cards for laptop mode (3 in a row) -->
+
+    <div class="container-fluid">
+        <div class="row first-row">
+            <div class=" hero-section p-5 text-center bg-image">
+                <div class="mask  p-3">
+                    <div class="d-flex justify-content-center align-items-center h-100 ">
+                        <div class="content">
+                            <div class="scroll-text">
+                                <div class="content-text typewriter">
+                                    
+                                    <h2 class="mb-3">Strengthen Your Apperance with Our Products</h2>
+                                </div>
+                            </div>
+                            <p class="para1 mb-3 lead fw-bold mb-5 text-white ">whoever said money can't buy happiness
+                                simply didn't know where to go shopping.</p>
+                                <!-- !!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                            <a class="Hero-btn text-decoration-none rounded  p-3" role="button" href="#" onclick="scrollToPosition()">Start your tripe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br><br><br><h1 style="text-align: center; font-weight: bold;"><span style="color: palevioletred;">the</span> store</h1><br><br><br>
+    <!-- Cards for laptop mode (3 in a row) -->
+
+    <div class="modal" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">The Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Complete the purchase process.</p>
+                    <label for="">Your Phone :</label>
+                    <input type="number" name="" id="nphone" >
+                    <br>
+                    <label for="">Type the item number(1-9) :</label>
+                    <input type="number" name="" id="nitem" >
+                    <p style="color: red; display: none;" id="fault">Complete the process</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="s()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cards for laptop mode (3 in a row) -->
+<div class="container">
+    <div class="row">
+
+        <!-- Cards for laptop mode (3 in a row) -->
+        <div class="col-md-4 mb-4" >
+            <div class="card" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="d1.jpeg" class="card-img-top" alt="Card Image 1" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Title 1</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat the above structure for the other 2 cards -->
+
+        <!-- Cards for laptop mode (3 in a row) -->
+        <div class="col-md-4 mb-4" >
+            <div class="card" style="width: 100%; height: 610px;" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="d2.jpeg" class="card-img-top" alt="Card Image 4" style="width: 100%; height: 400px;">
+                <div class="card-body"><br><br><br>
+                    <h5 class="card-title"> Title 2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat the above structure for the other 2 cards -->
+
+        <!-- Cards for laptop mode (3 in a row) -->
+        <div class="col-md-4 mb-4">
+            <div class="card" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="d3.jpeg" class="card-img-top" alt="Card Image 6" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title"> Title 3</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat the above structure for the other 3 cards -->
+
+        <!-- Cards for laptop mode (3 in a row) -->
+        <div class="col-md-4 mb-4">
+            <div class="card"data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="d4.jpeg" class="card-img-top" alt="Card Image 2" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title"> Title 4</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat the above structure for the other 2 cards -->
+<!-- Cards for laptop mode (3 in a row) -->
+<div class="col-md-4 mb-4">
+    <div class="card"data-bs-toggle="modal" data-bs-target="#myModal">
+        <img src="d5.jpeg" class="card-img-top" alt="Card Image 2" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title">Title 5</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat the above structure for the other 2 cards -->
+<!-- Cards for laptop mode (3 in a row) -->
+<div class="col-md-4 mb-4">
+    <div class="card" style="width: 100%; height: 610px;"data-bs-toggle="modal" data-bs-target="#myModal">
+        <img src="d6.jpeg" class="card-img-top" alt="Card Image 2" style="width: 100%;  height: 400px;">
+        <div class="card-body"><br><br>
+            <br>
+            <h5 class="card-title">Title 6</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat the above structure for the other 2 cards -->
+<!-- Cards for laptop mode (3 in a row) -->
+<div class="col-md-4 mb-4">
+    <div class="card" data-bs-toggle="modal" data-bs-target="#myModal">
+        <img src="d7.jpeg" class="card-img-top" alt="Card Image 2" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title">Title 7</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat the above structure for the other 2 cards -->
+<!-- Cards for laptop mode (3 in a row) -->
+<div class="col-md-4 mb-4">
+    <div class="card" data-bs-toggle="modal" data-bs-target="#myModal">
+        <img src="d8.jpeg" class="card-img-top" alt="Card Image 2" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title"> Title 8</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat the above structure for the other 2 cards -->
+        <!-- Cards for laptop mode (3 in a row) -->
+        <div class="col-md-4 mb-4">
+            <div class="card" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="d9.jpeg" class="card-img-top" alt="Card Image 5" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title"> Title 9</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+ <!-- Your existing content here -->
+ <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+        <span class="text-muted">© 2022 Your Store Name. All rights reserved.</span>
+        <p> The Store lorcan </p>
+    </div>
+</footer>
+
+<!-- Add Bootstrap JS and Popper.js -->
+<script>
+    function s() {
+        let nphone = document.getElementById('nphone').value;
+        let nitem = document.getElementById('nitem').value;
+
+        if (nphone.trim() === '' && nitem.trim() === '') {
+            document.getElementById('fault').style.display = 'block';
+            
+            return;
+        }
+
+        sendEmail();
+    }
+
+    function sendEmail() {
+        // Replace 'your-email@example.com' with your email address
+        var emailAddress = 'mcdochvk@gmail.com';
+        let nphone = document.getElementById('nphone').value;
+        let nitem = document.getElementById('nitem').value;
+
+        // Replace 'Product Inquiry' with your desired subject
+        var subject = 'Hi this is my number ' + nphone +' and I want the item number : '+ nitem;
+
+        // Create the email link
+        var emailLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject);
+
+        // Open the email link
+        window.location.href = emailLink;
+    }
+</script>
+
+<script>
+    // Scroll to a specific position
+    function ga() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    // Attach click event listener to the button
+    document.getElementById('end').addEventListener('click', scrollToPosition);
+  </script>
+
+<script>
+    // Scroll to a specific position
+    function scrollToPosition() {
+      window.scrollTo({
+        top: 700,
+        behavior: 'smooth'
+      });
+    }
+    // Attach click event listener to the button
+    document.getElementById('end').addEventListener('click', scrollToPosition);
+  </script>
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<!-- Add Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
